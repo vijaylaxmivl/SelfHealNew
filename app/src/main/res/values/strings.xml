@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SelfHeal</string>
+
+    <string name="email">Email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="title">Self-Heal</string>
+    <string name="powered_by">Powered By</string>
+    <string name="company_name">CYBERMANTRA</string>
+
+    <string name="threat_detected">THREAT DETECTED</string>
+    <string name="device_protected">DEVICE IS PROTECTED</string>
+    <string name="threat_detected_message">1 critical threat</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="overview_tab_text">Overview</string>
+    <string name="threat_tab_text">Threat List</string>
+</resources>

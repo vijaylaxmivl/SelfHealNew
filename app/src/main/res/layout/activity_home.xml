@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cm.selfheal.viewmodel.DataViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/universal_space_35"
+                    android:layout_height="@dimen/universal_space_35"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/universal_space_4"
+                    android:src="@drawable/selfheallogoround"></ImageView>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/universal_space_4"
+                    android:gravity="center"
+                    android:minHeight="?actionBarSize"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:background="@color/threat_bg_color"
+                android:paddingTop="@dimen/universal_space_8">
+
+                <ImageView
+                    android:id="@+id/iView"
+                    android:layout_width="@dimen/universal_space_100"
+                    android:layout_height="@dimen/universal_space_100"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/universal_space_16"
+                    android:src="@drawable/shield_yellow">
+
+                </ImageView>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/veryDarkPrimaryColor">
+
+                    <RelativeLayout
+                        android:id="@+id/rLayoutInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/universal_space_8"
+                        android:background="@drawable/custom_round_broder"
+                        android:padding="@dimen/universal_space_8">
+
+                        <TextView
+                            android:id="@+id/tViewSafeFlag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotoblack"
+                            android:gravity="center"
+                            android:text="@string/threat_detected"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/text_size_18sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/tViewSafeFlagDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tViewSafeFlag"
+                            android:fontFamily="@font/robotobold"
+                            android:gravity="center"
+                            android:text="@string/threat_detected_message"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/text_size_12sp"></TextView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingLeft="@dimen/universal_space_4"
+                android:paddingRight="@dimen/universal_space_4"
+                android:paddingTop="@dimen/universal_space_4"
+                android:paddingBottom="@dimen/universal_space_4"
+                android:background="@color/grid_bg_color"
+                android:layout_weight="1.2">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/universal_space_1"
+                    android:layout_marginRight="@dimen/universal_space_1"
+                    app:adapter="@{viewModel.adapter}"
+                    app:data="@{viewModel.data}"
+
+                    tools:context="com.cm.selfheal.view.activity.HomeActivity" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white_color">#ffffff</color>
+    <color name="colorAccent">#000000</color>
+    <color name="veryDarkPrimaryColor">#40c4ff</color>
+    <color name="colorPrimary">#0091ea</color>
+    <color name="colorPrimaryDark">#00b0ff</color>
+    <color name="grid_bg_color">#80d8ff</color>
+
+    <color name="light_primary_color">#ffffff</color>
+    <color name="primary_text_color">#4b4f53</color>
+    <color name="secondary_text_color">#727272</color>
+    <color name="blue_line_color">#29abe2</color>
+    <color name="blue_line_light_color">#68c3ea</color>
+    <color name="blue_line_lighter_color">#94d4f0</color>
+    <color name="divider_text_color">#B6B6B6</color>
+    <color name="dark_grey_color">#606060</color>
+    <color name="accent_color">#757a80</color>
+    <color name="search_background_color">#f7f7f9</color>
+    <color name="light_grey_color">#DFDFDF</color>
+    <color name="bg_color">#F1F1F1</color>
+    <color name="white_text_color">#FFFFFF</color>
+    <color name="transparent_color">#e3e4e6</color>
+    <color name="transparent_color2">#00ffffff</color>
+    <color name="loader_bg">#b7b7b7</color>
+
+    <color name="colorHeaderBackground">#1CADE4</color>
+
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green_bp">#3cba54</color>
+    <color name="grey">#848484</color>F
+    <color name="grey_hex_aa">#AAAAAA</color>
+    <color name="grey_hex_49">#494949</color>
+    <color name="gold">#FFD700</color>
+    <color name="coral">#FF4040</color>
+    <color name="threat_color">#ffd180</color>
+    <color name="protected_color">#69F0AE</color>
+    <color name="may_green">#4C9141</color>
+    <color name="gentianaceae_blue">#2A6478</color>
+    <color name="blue_krayola">#1F75FE</color>
+    <color name="green">#45D100</color>
+    <color name="protected_text_color">#00c853</color>
+    <color name="protected_bg_color">#c5ed53</color>
+    <color name="threat_bg_color">#f3cc80</color>
+
+
+</resources>

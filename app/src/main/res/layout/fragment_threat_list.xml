@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.ThreatListFragment"
+        android:background="@color/bg_color"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/universal_space_16">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/universal_space_5">
+
+            <TextView
+                android:id="@+id/titleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:fontFamily="@font/robotoblack"
+                android:padding="@dimen/universal_space_5"
+                android:textSize="@dimen/text_size_15sp"
+                android:text="Total No of Threats"
+                android:textAlignment="textStart"
+                android:textColor="@color/coral" />
+
+            <TextView
+                android:id="@+id/threatNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/robotoblack"
+                android:padding="@dimen/universal_space_5"
+                android:textAlignment="textEnd"
+                android:textSize="@dimen/text_size_15sp"
+                android:textColor="@color/coral" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/threatList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</layout>

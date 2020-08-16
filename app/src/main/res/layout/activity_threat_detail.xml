@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cm.selfheal.viewmodel.ThreatDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.ThreatDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/layoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/universal_space_8"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/universal_space_5">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@{viewModel.flag?@drawable/circle_red:@drawable/circle_amber}" />
+
+                    <TextView
+                        android:id="@+id/titleName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/robotoblack"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="@dimen/universal_space_5"
+                        android:text="@{viewModel.threatName}"
+                        android:textColor="@color/primary_text_color" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotoregular"
+                        android:padding="@dimen/universal_space_1"
+                        android:text="@{viewModel.threatDate}"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="@dimen/universal_space_14" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="@{viewModel.threatTime}"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="@dimen/universal_space_14" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.ThreatDetailActivity"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginLeft="@dimen/universal_space_1"
+            android:layout_marginTop="@dimen/universal_space_8"
+            android:layout_marginRight="@dimen/universal_space_1"
+            app:adapter="@{viewModel.adapter}"
+            app:data="@{viewModel.data}"
+
+            tools:context="com.cm.selfheal.view.activity.ThreatDetailActivity" />
+    </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

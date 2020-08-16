@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cm.selfheal.viewmodel.DataItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_bg_white">
+
+        <RelativeLayout
+            android:id="@+id/rLayoutClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:tag="@{viewModel.id}">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/universal_space_16"
+                android:layout_marginRight="@dimen/universal_space_16"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/iView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/universal_space_4"
+                    android:layout_weight="1"
+                    android:background="@drawable/smartphone"
+                    android:src="@{viewModel.protectionImage}">
+
+                </ImageView>
+
+                <RelativeLayout
+                    android:id="@+id/rLayoutInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/tViewProtectionType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="@string/threat_detected"
+                        android:textColor="@color/primary_text_color"
+                        android:textSize="@dimen/text_size_14sp"
+                        app:text="@{viewModel.protectionTitle}"></TextView>
+
+                    <TextView
+                        android:id="@+id/tViewProtectionTypeDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/tViewProtectionType"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="@dimen/text_size_11sp"
+                        app:text="@{viewModel.protectionTitleDesc}"></TextView>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/universal_space_5"
+            android:layout_marginRight="@dimen/universal_space_5"
+            android:background="@{viewModel.protectionFlag ? @drawable/ic_green_tick : @drawable/ic_error_cross}" />
+    </RelativeLayout>
+</layout>

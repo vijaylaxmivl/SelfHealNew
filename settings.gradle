@@ -1,0 +1,3 @@
+include ':CoreSecurityLib'
+include ':app'
+rootProject.name = "SelfHeal"

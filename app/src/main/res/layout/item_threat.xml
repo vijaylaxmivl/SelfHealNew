@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="threat"
+            type="com.cm.selfheal.model.ThreatListModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/universal_space_8"
+        android:background="@color/grid_bg_color"
+        android:orientation="vertical"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/universal_space_8">
+
+        <LinearLayout
+            android:id="@+id/threatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grid_bg_color"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(threat.id)}"
+                android:visibility="gone"></TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/universal_space_5">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/universal_space_5">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@{threat.flag?@drawable/circle_red:@drawable/circle_amber}" />
+
+                        <TextView
+                            android:id="@+id/titleName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotoblack"
+                            android:layout_gravity="center_vertical"
+                            android:text="@{threat.name}"
+                            android:paddingLeft="@dimen/universal_space_5"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotoregular"
+                            android:padding="@dimen/universal_space_1"
+                            android:text="@{threat.date}"
+                            android:textAlignment="center"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/universal_space_14" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotoregular"
+                            android:text="@{threat.time}"
+                            android:textAlignment="center"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/universal_space_14" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/grid_bg_color"
+                    android:orientation="vertical"
+                    android:padding="@dimen/universal_space_8"
+                    app:cardCornerRadius="@dimen/universal_space_4">
+
+                    <TextView
+                        android:id="@+id/titleDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotoregular"
+                        android:padding="@dimen/universal_space_8"
+                        android:text="@{threat.desc}"
+                        android:textAlignment="center"
+                        android:textColor="@color/primary_text_color"
+                        android:textSize="@dimen/universal_space_15" />
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
